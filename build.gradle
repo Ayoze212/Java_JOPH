@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Add any necessary dependencies here
+    implementation 'javax.rmi:javax.rmi-api:1.0.0' // Example dependency for RMI
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'Serveur' // Specify the main class for the application
+        )
+    }
+}
